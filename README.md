@@ -54,6 +54,18 @@ Steps to scroll up and down:
 - Tap-and-hold middle pedal to scroll up until the pedal has released
 - Tap-and-hold right pedal to scroll down until the pedal has released
 
+### Browser going back and forward
+
+- Press-and-hold <kbd>ALT</kbd>
+- Tap middle pedal to go back
+- Tap right pedal to go forward
+
+### Pressing <kbd>CTRL</kbd> + <kbd>PGUP</kbd>/<kbd>PGDN</kbd>
+
+- Press-and-hold <kbd>CTRL</kbd>
+- Tap middle pedal to press <kbd>CTRL</kbd> + <kbd>PGUP</kbd>
+- Tap right pedal to press <kbd>CTRL</kbd> + <kbd>PGDN</kbd>
+
 ## Disclaimer
 
 We are not endorsed or affiliated with BOSS and Roland Corporation.

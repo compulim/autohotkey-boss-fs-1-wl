@@ -24,7 +24,19 @@ ProcessCC(device, channel, cc, value) {
       Send("{Right}")
     }
   } else if (cc = 81 or cc = 82) {
-    if (value != 0) {
+    if (GetKeyState("Ctrl") = 1) {
+      if (value != 0) {
+        Send(cc = 81 ? "{Blind}{PgUp}" : "{Blind}{PgDn}")
+      }
+
+      Return
+    } else if (GetKeyState("Alt") = 1) {
+      if (value != 0) {
+        Send(cc = 81 ? "{Blind}{Browser_Back}" : "{Blind}{Browser_Forward}")
+      }
+
+      Return
+    } else if (value != 0) {
       repeatingKey := cc = 81 ? "{WheelUp}" : "{WheelDown}"
       SetTimer(Repeater, 1)
     } else {
