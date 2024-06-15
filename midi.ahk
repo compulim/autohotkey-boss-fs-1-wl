@@ -12,14 +12,14 @@ MidiMain() {
     result := DllCall("winmm.dll\midiInOpen", "Ptr", hMidiIn, "UInt", midiDeviceID, "UInt", A_ScriptHwnd, "UInt", 0, "UInt", CALLBACK_WINDOW, "UInt")
 
     if (result) {
-      MsgBox(Error, "Failed to call midiInOpen for device ID " . midiDeviceID)
+      MsgBox("Failed to call midiInOpen for device ID " . midiDeviceID)
       Return
     }
 
     result := DllCall("winmm.dll\midiInStart", "UInt", NumGet(hMidiIn, 0, "UInt"), "UInt")
 
     if (result) {
-      MsgBox(Error, "Failed to call midiInStart for device ID " . midiDeviceID)
+      MsgBox("Failed to call midiInStart for device ID " . midiDeviceID)
       Return
     }
   }
