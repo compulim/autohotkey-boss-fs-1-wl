@@ -7,11 +7,7 @@ ProcessCC(device, channel, cc, value) {
   global repeatingKey
 
   if (cc = 80) {
-    if (value = 0) {
-      Send("{Blind}{LAlt up}")
-    } else {
-      Send("{Blind}{LAlt down}{Tab}")
-    }
+    Send("{Blind}" . (value = 0 ? "{LAlt up}" : "{LAlt down}{Tab}"))
   }
 
   if (WinActive("ahk_class XamlExplorerHostIslandWindow")) {
@@ -26,16 +22,12 @@ ProcessCC(device, channel, cc, value) {
   } else if (cc = 81 or cc = 82) {
     if (GetKeyState("Ctrl") = 1) {
       if (value != 0) {
-        Send(cc = 81 ? "{Blind}{PgUp}" : "{Blind}{PgDn}")
+        Send("{Blind}" . (cc = 81 ? "{PgUp}" : "{PgDn}"))
       }
-
-      Return
     } else if (GetKeyState("Alt") = 1) {
       if (value != 0) {
-        Send(cc = 81 ? "{Blind}{Browser_Back}" : "{Blind}{Browser_Forward}")
+        Send("{Blind}" . (cc = 81 ? "{Browser_Back}" : "{Browser_Forward}"))
       }
-
-      Return
     } else if (value != 0) {
       repeatingKey := cc = 81 ? "{WheelUp}" : "{WheelDown}"
       SetTimer(Repeater, 1)
