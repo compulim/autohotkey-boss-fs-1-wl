@@ -15,7 +15,7 @@ MidiMain() {
       Return
     }
 
-    hMidiIn := NumGet(hMidiIn, 0, "UInt") ; because midiInOpen writes the value in 32 bit binary Number, AHK stores it as a string
+    hMidiIn := NumGet(hMidiIn, 0, "UInt")
 
     result := DllCall("winmm.dll\midiInStart", "UInt", hMidiIn, "UInt")
 
@@ -26,7 +26,6 @@ MidiMain() {
   }
 
   OnMessage(0x3C3, ON_MM_MIM_DATA) ; MM_MIM_DATA, https://learn.microsoft.com/en-us/windows/win32/multimedia/mm-mim-data
-  ; OnMessage(0x3C4, ON_MM_MIM_DATA) ; MM_MIM_LONGDATA
 }
 
 ON_MM_MIM_DATA(hInput, midiMsg, wMsg, hWnd) {
