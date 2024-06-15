@@ -6,7 +6,7 @@ This script enables [BOSS FS-1-WL Wireless Footswitch](https://www.boss.info/us/
 
 ## Background
 
-[BOSS FS-1-WL Wireless Footswitch](https://www.boss.info/us/products/fs-1-wl/) has 2 modes: keyboard HID (Bluetooth/USB) and MIDI (USB). The keyboard HID mode allows the footswitch to be programmed and work as a keyboard.
+[BOSS FS-1-WL Wireless Footswitch](https://www.boss.info/us/products/fs-1-wl/) is a wireless footswitch designed for guitar amp and PC. It has 2 modes: keyboard HID (Bluetooth/USB) and MIDI (USB). The keyboard HID mode allows the footswitch to be programmed and work as a keyboard.
 
 However, the programmability of keyboard HID mode is too weak to make it useful as a productivity tool:
 
