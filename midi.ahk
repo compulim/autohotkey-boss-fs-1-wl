@@ -1,11 +1,12 @@
 #DllLoad "winmm.dll"
 
 MidiMain() {
-  DeviceID := 0
+  global midiDeviceID
+
   CALLBACK_WINDOW := 0x10000
 
   hMidiIn := Buffer(8)
-  result := DllCall("winmm.dll\midiInOpen", "Ptr", hMidiIn, "UInt", DeviceID, "UInt", A_ScriptHwnd, "UInt", 0, "UInt", CALLBACK_WINDOW, "UInt")
+  result := DllCall("winmm.dll\midiInOpen", "Ptr", hMidiIn, "UInt", midiDeviceID, "UInt", A_ScriptHwnd, "UInt", 0, "UInt", CALLBACK_WINDOW, "UInt")
 
   if (result) {
     MsgBox(Error, "Failed to call midiInOpen")

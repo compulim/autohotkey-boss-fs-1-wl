@@ -1,3 +1,6 @@
+midiDeviceID := 0
+repeatingKey := ""
+
 ProcessNote(device, channel, note, velocity, isNoteOn) {
 }
 
@@ -39,6 +42,8 @@ ProcessPitchBend(device, channel, value) {
 }
 
 Repeater() {
+  global repeatingKey
+
   if (repeatingKey) {
     Send(repeatingKey)
     SetTimer(, 20)
