@@ -34,7 +34,7 @@ All functions assume the BOSS FS-1-WL Wireless Footswitch is in its default conf
 
 Steps to switching tasks (<kbd>ALT</kbd> + <kbd>TAB</kbd>):
 
-1. Tap-and-hold left pedal will activate Windows task switcher
+1. Tap-and-hold left pedal to activate Windows task switcher
 1. Tap middle pedal to select previous window
 1. Tap right pedal to select next window
 1. Release left pedal to switch to the selected window
