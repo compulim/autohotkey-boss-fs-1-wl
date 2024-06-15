@@ -20,9 +20,9 @@ We are using AutoHotKey v2 to call [`winmm.dll`](https://learn.microsoft.com/en-
 1. Install AutoHotKey v2 from https://github.com/AutoHotkey/AutoHotkey/releases
 1. Connect FS-1-WL via a USB cable
 1. Turn on FS-1-WL and switch to MIDI mode
-1. Run [`main.ahk`](/tree/main/main.ahk)
+1. Run [`main.ahk`](/main.ahk)
 
-To configure how each pedal works, edit [`config.ahk`](/tree/main/config.ahk).
+To configure how each pedal works, edit [`config.ahk`](/config.ahk).
 
 ## Functionality
 
