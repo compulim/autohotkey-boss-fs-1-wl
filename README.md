@@ -2,7 +2,7 @@
 
 > Credits to https://github.com/laurence-myers/midi-to-macro and various forum members
 
-This script enables [BOSS FS-1-WL Wireless Footswitch](https://www.boss.info/us/products/fs-1-wl/) to use inside AutoHotKey via MIDI.
+This script enables [BOSS FS-1-WL Wireless Footswitch](https://www.boss.info/us/products/fs-1-wl/) to use inside AutoHotKey v2 via MIDI in Windows.
 
 ## Background
 
