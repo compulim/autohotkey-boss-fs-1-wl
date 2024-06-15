@@ -1,4 +1,3 @@
-midiDeviceID := 0
 repeatingKey := ""
 
 ProcessNote(device, channel, note, velocity, isNoteOn) {

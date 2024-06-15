@@ -1,25 +1,28 @@
 #DllLoad "winmm.dll"
 
 MidiMain() {
-  global midiDeviceID
-
   CALLBACK_WINDOW := 0x10000
 
-  hMidiIn := Buffer(8)
-  result := DllCall("winmm.dll\midiInOpen", "Ptr", hMidiIn, "UInt", midiDeviceID, "UInt", A_ScriptHwnd, "UInt", 0, "UInt", CALLBACK_WINDOW, "UInt")
+  numPorts := DllCall("winmm.dll\midiInGetNumDevs")
 
-  if (result) {
-    MsgBox(Error, "Failed to call midiInOpen")
-    Return
-  }
+  Loop numPorts {
+    hMidiIn := Buffer(8)
+    midiDeviceID := A_Index - 1
+    result := DllCall("winmm.dll\midiInOpen", "Ptr", hMidiIn, "UInt", midiDeviceID, "UInt", A_ScriptHwnd, "UInt", 0, "UInt", CALLBACK_WINDOW, "UInt")
 
-  hMidiIn := NumGet(hMidiIn, 0, "UInt") ; because midiInOpen writes the value in 32 bit binary Number, AHK stores it as a string
+    if (result) {
+      MsgBox(Error, "Failed to call midiInOpen for device ID " . midiDeviceID)
+      Return
+    }
 
-  result := DllCall("winmm.dll\midiInStart", "UInt", hMidiIn, "UInt")
+    hMidiIn := NumGet(hMidiIn, 0, "UInt") ; because midiInOpen writes the value in 32 bit binary Number, AHK stores it as a string
 
-  if (result) {
-    MsgBox(Error, "Failed to call midiInStart")
-    Return
+    result := DllCall("winmm.dll\midiInStart", "UInt", hMidiIn, "UInt")
+
+    if (result) {
+      MsgBox(Error, "Failed to call midiInStart for device ID " . midiDeviceID)
+      Return
+    }
   }
 
   OnMessage(0x3C3, ON_MM_MIM_DATA) ; MM_MIM_DATA, https://learn.microsoft.com/en-us/windows/win32/multimedia/mm-mim-data

@@ -28,6 +28,8 @@ In this repository, we are using AutoHotKey v2 to call into [`winmm.dll`](https:
 
 To configure how each pedal works, edit [`config.ahk`](/config.ahk).
 
+Note: this script will listen to all MIDI devices available in the system.
+
 ## Functionality
 
 All functions assume the BOSS FS-1-WL Wireless Footswitch is in its default configuration:
@@ -35,7 +37,6 @@ All functions assume the BOSS FS-1-WL Wireless Footswitch is in its default conf
 - Left pedal is `CC 80`
 - Middle pedal is `CC 81`
 - Right pedal is `CC 82`
-- The device has MIDI device ID of `0` in Windows
 
 ### Task switching
 
