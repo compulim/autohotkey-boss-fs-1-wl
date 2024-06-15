@@ -8,6 +8,7 @@ MidiMain() {
   Loop numPorts {
     hMidiIn := Buffer(8)
     midiDeviceID := A_Index - 1
+
     result := DllCall("winmm.dll\midiInOpen", "Ptr", hMidiIn, "UInt", midiDeviceID, "UInt", A_ScriptHwnd, "UInt", 0, "UInt", CALLBACK_WINDOW, "UInt")
 
     if (result) {
@@ -15,9 +16,7 @@ MidiMain() {
       Return
     }
 
-    hMidiIn := NumGet(hMidiIn, 0, "UInt")
-
-    result := DllCall("winmm.dll\midiInStart", "UInt", hMidiIn, "UInt")
+    result := DllCall("winmm.dll\midiInStart", "UInt", NumGet(hMidiIn, 0, "UInt"), "UInt")
 
     if (result) {
       MsgBox(Error, "Failed to call midiInStart for device ID " . midiDeviceID)
