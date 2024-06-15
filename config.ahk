@@ -30,7 +30,7 @@ ProcessCC(device, channel, cc, value) {
       }
     } else if (value != 0) {
       repeatingKey := cc = 81 ? "{WheelUp}" : "{WheelDown}"
-      SetTimer(Repeater, 1)
+      SetTimer(Repeater, -1)
     } else {
       repeatingKey := ""
       SetTimer(Repeater, 0)
@@ -49,7 +49,7 @@ Repeater() {
 
   if (repeatingKey) {
     Send(repeatingKey)
-    SetTimer(, 20)
+    SetTimer(, -20)
   } else {
     SetTimer(, 0)
   }
