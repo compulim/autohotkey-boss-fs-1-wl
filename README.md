@@ -30,7 +30,12 @@ To configure how each pedal works, edit [`config.ahk`](/config.ahk).
 
 ## Functionality
 
-All functions assume the BOSS FS-1-WL Wireless Footswitch is in its default configuration (left pedal is CC 80, middle pedal is CC 81, right pedal is CC 82). And the device has MIDI device ID of `0`.
+All functions assume the BOSS FS-1-WL Wireless Footswitch is in its default configuration:
+
+- Left pedal is `CC 80`
+- Middle pedal is `CC 81`
+- Right pedal is `CC 82`
+- The device has MIDI device ID of `0` in Windows
 
 ### Task switching
 
