@@ -13,7 +13,7 @@ However, the programmability of keyboard HID mode is too weak to make it useful 
 - When the pedal is latched, it cannot tap-and-hold a key
 - It cannot perform actions with key modifiers (<kbd>CTRL</kbd>, <kbd>SHIFT</kbd>, <kbd>ALT</kbd>, etc.)
 
-We are using AutoHotKey v2 to call [`winmm.dll`](https://learn.microsoft.com/en-us/windows/win32/api/mmeapi/nf-mmeapi-midiinopen) to enable advanced scenarios.
+In this repro, we are using AutoHotKey v2 to call into [`winmm.dll`](https://learn.microsoft.com/en-us/windows/win32/api/mmeapi/nf-mmeapi-midiinopen) to enable advanced scenarios, such as <kbd>ALT</kbd> + <kbd>TAB</kbd> and scrolling mouse wheel.
 
 ## How to use
 
@@ -37,7 +37,7 @@ Steps to switching tasks (<kbd>ALT</kbd> + <kbd>TAB</kbd>):
 1. Tap right pedal to select next window
 1. Release left pedal to switch to the selected window
 
-### Mouse scroll
+### Scrolling mouse wheel
 
 Steps to scroll up and down:
 
