@@ -17,13 +17,16 @@ We are using AutoHotKey v2 to call [`winmm.dll`](https://learn.microsoft.com/en-
 
 ## How to use
 
-Install AutoHotKey v2 from https://github.com/AutoHotkey/AutoHotkey/releases. Then, run `main.ahk`.
+1. Install AutoHotKey v2 from https://github.com/AutoHotkey/AutoHotkey/releases
+1. Connect FS-1-WL via a USB cable
+1. Turn on FS-1-WL and switch to MIDI mode
+1. Run [`main.ahk`](tree/main/main.ahk)
 
-To configure how each pedal works, edit `config.ahk`.
+To configure how each pedal works, edit [`config.ahk`](tree/main/config.ahk).
 
 ## Functionality
 
-All functions assume the BOSS FS-1-WL is in default configuration (left pedal is CC 80, middle pedal is CC 81, right pedal is CC 82).
+All functions assume the BOSS FS-1-WL Wireless Footswitch is in its default configuration (left pedal is CC 80, middle pedal is CC 81, right pedal is CC 82).
 
 ### Task switching
 
@@ -40,6 +43,10 @@ Steps to scroll up and down:
 
 1. Tap middle pedal to scroll up 5 times
 1. Tap right pedal to scroll down 5 times
+
+## Disclaimer
+
+We are not endorsed or affiliated with BOSS and Roland Corporation.
 
 ## Contributions
 
