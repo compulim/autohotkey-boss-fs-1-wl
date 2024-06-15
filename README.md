@@ -45,8 +45,8 @@ Steps to switching tasks (<kbd>ALT</kbd> + <kbd>TAB</kbd>):
 
 Steps to scroll up and down:
 
-1. Tap middle pedal to scroll up 5 times
-1. Tap right pedal to scroll down 5 times
+- Tap-and-hold middle pedal to scroll up until the pedal is release
+- Tap-and-hold right pedal to scroll down until the pedal is released
 
 ## Disclaimer
 
