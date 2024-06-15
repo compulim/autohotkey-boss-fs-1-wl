@@ -4,6 +4,8 @@
 
 This script enables [BOSS FS-1-WL Wireless Footswitch](https://www.boss.info/us/products/fs-1-wl/) to use inside AutoHotKey v2 via MIDI in Windows.
 
+It can be extended to support any types of MIDI input device.
+
 ## Background
 
 [BOSS FS-1-WL Wireless Footswitch](https://www.boss.info/us/products/fs-1-wl/) is a wireless footswitch designed for guitar amp and PC.
