@@ -1,18 +1,13 @@
-repeatingKey := ""
-
 ProcessNote(device, channel, note, velocity, isNoteOn) {
 }
 
 ProcessCC(device, channel, cc, value) {
-  global repeatingKey
-
   if (cc = 80) {
     Send("{Blind}" . (value = 0 ? "{LAlt up}" : "{LAlt down}{Tab}"))
   }
 
   if (WinActive("ahk_class XamlExplorerHostIslandWindow")) {
-    repeatingKey := ""
-    SetTimer(Repeater, 0)
+    RepeatKeystroke("")
 
     if (cc = 81 and value != 0) {
       Send("{Left}")
@@ -29,11 +24,9 @@ ProcessCC(device, channel, cc, value) {
         Send("{Blind}" . (cc = 81 ? "{Browser_Back}" : "{Browser_Forward}"))
       }
     } else if (value != 0) {
-      repeatingKey := cc = 81 ? "{WheelUp}" : "{WheelDown}"
-      SetTimer(Repeater, -1)
+      RepeatKeystroke(cc = 81 ? "{WheelUp}" : "{WheelDown}")
     } else {
-      repeatingKey := ""
-      SetTimer(Repeater, 0)
+      RepeatKeystroke("")
     }
   }
 }
@@ -42,15 +35,4 @@ ProcessPC(device, channel, note, velocity) {
 }
 
 ProcessPitchBend(device, channel, value) {
-}
-
-Repeater() {
-  global repeatingKey
-
-  if (repeatingKey) {
-    Send(repeatingKey)
-    SetTimer(, -20)
-  } else {
-    SetTimer(, 0)
-  }
 }
