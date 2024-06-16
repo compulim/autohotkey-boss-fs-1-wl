@@ -28,7 +28,7 @@ Repeater() {
     Send(repeatingKey)
 
     repeatingIndex := Max(repeatingIndex + 1, maxRepeatingAfterIndex)
-    rate := 1 - (1 - repeatingIndex / maxRepeatingAfterIndex) ** 3 ; Ease-out cubic, 0.0 -> 1.0
+    rate := 1 - (1 - repeatingIndex / maxRepeatingAfterIndex) ** 4 ; Ease-out quart, 0.0 -> 1.0
     repeatAfterMS := (maxRepeatRate + minRepeatRate) - (rate * minRepeatRate) ; 0.0 -> minRepeatRate, 1.0 -> maxRepeatRate
 
     SetTimer(, -repeatAfterMS) ; Defensive: negative number to run-once
